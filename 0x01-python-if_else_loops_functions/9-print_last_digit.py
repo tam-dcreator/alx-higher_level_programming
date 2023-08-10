@@ -4,4 +4,4 @@ def print_last_digit(number):
         number *= -1
     number %= 10
     print(number, end="")
-    return(number)
+    return (number)
