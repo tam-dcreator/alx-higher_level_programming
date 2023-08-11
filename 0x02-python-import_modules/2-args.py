@@ -9,7 +9,7 @@ if __name__ == "__main__":
         print("1 argument:")
         print("1: {0}".format(argv[1]))
     else:
-        print("{0}: arguments:".format(arg_len))
+        print("{0} arguments:".format(arg_len))
         for arg in argv[1:]:
             print("{}: {}".format(count, arg))
             count += 1
