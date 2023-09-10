@@ -4,6 +4,7 @@
 A Square Module
 """
 
+
 class Square:
     """
     A square class containing a private attribute.
