@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
 """A lookup function module"""
+
+
 def lookup(obj):
     """A function to get the attributes of an object.
 
