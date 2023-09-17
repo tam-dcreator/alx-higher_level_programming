@@ -86,11 +86,10 @@ class Square:
         """Function that prints the square using the pound sign"""
         if self.__size == 0:
             print()
-        else:
-            for _ in range(self.__size):
-                if not self.__position[1] > 0:
-                    for _ in range(self.__position[0]):
-                        print(" ", end="")
-                for _ in range(self.__size):
-                    print("#", end="")
-                print()
+            return
+
+        for _ in range(self.__position[1]):
+            print()
+
+        for _ in range(self.__size):
+            print(" " * self.__position[0] + "#" * self.__size)
