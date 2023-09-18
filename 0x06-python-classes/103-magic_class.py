@@ -13,7 +13,7 @@ class MagicClass:
         radius(int/float): Number representing the radius of the object
     """
     def __init__(self, radius=None):
-        if radius is not int or radius is not float:
+        if not isinstance(radius, int) and not isinstance(radius, float):
             raise TypeError("radius must be a number")
         self.__radius = radius
 
