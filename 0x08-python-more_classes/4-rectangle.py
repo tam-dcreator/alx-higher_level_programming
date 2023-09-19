@@ -121,4 +121,4 @@ class Rectangle:
         str: A string representation of the object
         """
         return "Rectangle(" + str(self.__width) + ", "\
-                + str(self.__height) + ")"
+            + str(self.__height) + ")"
