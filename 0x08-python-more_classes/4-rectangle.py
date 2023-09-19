@@ -109,3 +109,16 @@ class Rectangle:
             if i < self.__height - 1:
                 _return += "\n"
         return _return
+
+    def __repr__(self):
+        """Returns a string representation of the Rectangle instance
+
+        This method is called by the built-in 'repr()' function and provides
+        a concise representation of the object. Typically used for debugging
+        and development purposes
+
+        Returns:
+        str: A string representation of the object
+        """
+        return "Rectangle(" + str(self.__width) + ", "\
+                + str(self.__height) + ")"
