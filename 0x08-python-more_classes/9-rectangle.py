@@ -165,6 +165,4 @@ class Rectangle:
         Returns:
              Rectangle object: A new rectangle of equal width and height
         """
-        if not isinstance(size, int):
-            raise TypeError("width must be an integer")
-        return Rectangle(size, size)
+        return cls(size, size)
