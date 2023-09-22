@@ -31,9 +31,14 @@ class Student:
         return self.__dict__
 
     def reload_from_json(self, json):
-        """
+        """Function that loads class attributes from a file
 
+        Args:
+            json(dict): File containing a dictionary for the attributes
         """
-        self.first_name = json["first_name"]
-        self.last_name = json["last_name"]
-        self.age = json["age"]
+        try:
+            self.first_name = json["first_name"]
+            self.last_name = json["last_name"]
+            self.age = json["age"]
+        except Exception:
+            return
