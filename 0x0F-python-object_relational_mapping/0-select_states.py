@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     # Query Database and print result
 
-    cur.execute("""SELECT * FROM states ORDER BY states.id""")
+    cur.execute("""SELECT * FROM states""")
 
     for result in cur.fetchall():
         print(result)
