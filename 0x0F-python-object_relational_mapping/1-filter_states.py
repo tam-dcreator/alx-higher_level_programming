@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     # Query Database and print result
 
-    cur.execute("""SELECT * FROM states WHERE name LIKE 'N%' 
+    cur.execute("""SELECT * FROM states WHERE name LIKE 'N%'
                     ORDER BY states.id""")
 
     for result in cur.fetchall():
