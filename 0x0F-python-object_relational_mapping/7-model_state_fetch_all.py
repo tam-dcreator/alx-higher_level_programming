@@ -20,4 +20,4 @@ session = Session(bind=engine)
 result = session.query(State).order_by(State.id).all()
 
 for obj in result:
-    print("%s: %s" % (obj.id, obj.name))
+    print(obj.id, obj.name, sep=": ")
