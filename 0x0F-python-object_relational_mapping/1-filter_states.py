@@ -21,12 +21,11 @@ if __name__ == "__main__":
 
     # Query Database and print result
 
-    cur.execute("""SELECT * FROM states ORDER BY states.id""")
+    cur.execute("""SELECT * FROM states WHERE name LIKE 'N%' 
+                    ORDER BY states.id""")
 
     for result in cur.fetchall():
-        # Check if the first letter in the state matches
-        if result[1][0] == 'N':
-            print(result)
+        print(result)
 
     # Close the connections
 
