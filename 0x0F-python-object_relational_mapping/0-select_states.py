@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     # Connect to Database
 
-    conn = MySQLdb.connect(host="127.0.0.1", user=USERNAME, password=PASSWORD,
+    conn = MySQLdb.connect(host="localhost", user=USERNAME, password=PASSWORD,
                            port=3306, database=DB_NAME)
     cur = conn.cursor()
 
@@ -23,9 +23,8 @@ if __name__ == "__main__":
 
     cur.execute("""SELECT * FROM states ORDER BY states.id""")
 
-    result = cur.fetchall()
-    for row in result:
-        print(row)
+    for result in cur.fetchall():
+        print(result)
 
     # Close the connections
 
