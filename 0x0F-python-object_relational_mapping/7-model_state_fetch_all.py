@@ -3,7 +3,7 @@
 A Module that uses ORM to list all objects from a database
 """
 from model_state import Base, State
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from sys import argv
 
@@ -14,9 +14,9 @@ engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
 # Bind it to the existing Base
 Base.metadata.create_all(engine)
 
-# Create a session using the engine
-session = Session(bind=engine)
-
+# Create a session using the engine and a session maker
+Session = sessionmaker(bind=engine)
+session = Session()
 result = session.query(State).order_by(State.id).all()
 
 for obj in result:
