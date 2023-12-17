@@ -21,10 +21,11 @@ if __name__ == "__main__":
 
     # Query Database and print result
 
-    cur.execute("""SELECT * FROM states""")
+    cur.execute("""SELECT * FROM states ORDER BY states.id""")
 
-    for result in cur.fetchall():
-        print(result)
+    result = cur.fetchall()
+    for row in result:
+        print(row)
 
     # Close the connections
 
