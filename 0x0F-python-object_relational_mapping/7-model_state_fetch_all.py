@@ -11,6 +11,9 @@ from sys import argv
 engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                        .format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
 
+# Bind it to the existing Base
+Base.metadata.bind = engine
+
 # Create a session using the engine
 session = Session(bind=engine)
 
