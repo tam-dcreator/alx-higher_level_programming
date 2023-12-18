@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     # Query Database and print result
 
-    cur.execute("""SELECT * FROM states WHERE name LIKE '{}' ORDER BY
+    cur.execute("""SELECT * FROM states WHERE BINARY name = '{}' ORDER BY
                 states.id""".format(STATE_NAME))
 
     for result in cur.fetchall():
