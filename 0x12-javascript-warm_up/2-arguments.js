@@ -1,10 +1,10 @@
 #!/usr/bin/node
 // Script that prints command line arguments
-const { argv } = require('node:process');
+const argVar = process.argv;
 
-if (argv.length === 3) {
+if (argVar.length === 3) {
   console.log('Argument found');
-} else if (argv.length > 3) {
+} else if (argVar.length > 2) {
   console.log('Arguments found');
 } else {
   console.log('No argument');
