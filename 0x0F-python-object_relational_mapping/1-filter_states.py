@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that takes in a search parameter and displays all values that match it
+Script that return names of states starting with N
 """
 
 if __name__ == "__main__":
@@ -11,8 +11,8 @@ if __name__ == "__main__":
                            password=av[2], database=av[3])
     cur = conn.cursor()
 
-    cur.execute("""SELECT * FROM states WHERE name='{}' ORDER BY id ASC"""
-                .format(av[4]))
+    cur.execute("""SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id
+    ASC""")
     result = cur.fetchall()
     for row in result:
         print(row)
