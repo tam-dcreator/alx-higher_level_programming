@@ -11,8 +11,8 @@ if __name__ == "__main__":
                            password=av[2], database=av[3])
     cur = conn.cursor()
 
-    cur.execute("""SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id
-    ASC""")
+    cur.execute("""SELECT * FROM states WHERE BINARY name LIKE 'N%'
+ORDER BY id ASC""")
     result = cur.fetchall()
     for row in result:
         print(row)
