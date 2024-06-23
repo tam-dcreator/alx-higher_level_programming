@@ -4,7 +4,7 @@ A Module that contains a script that deletes all entries whose name has an 'a'
 """
 if __name__ == "__main__":
     from model_state import Base, State
-    from sqlalchemy.orm import Session
+    from sqlalchemy.orm import sessionmaker
     from sqlalchemy import create_engine
     from sys import argv
 
@@ -14,7 +14,8 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
 
     # Create a session using the engine
-    session = Session(bind=engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
     # Query the session to get obj, filter by 'a'
     to_delete = session.query(State).filter(State.name.like('%a%')).all()
